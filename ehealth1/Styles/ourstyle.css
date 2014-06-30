@@ -1,0 +1,87 @@
+﻿
+           .intro-block
+           {
+              background:url(../images/purpalt.png)repeat ;
+              padding:200px 15px 60px;
+              color:#fff;
+              
+              
+               
+               
+               
+               }
+               .text-muted
+               {
+                   color:#e9e6df ;
+                   font-weight:100;
+                   
+                   
+                   
+                   }
+                   .tpad
+                   {
+                       padding:20px;
+                       
+                       
+                       }
+                       
+                      .col
+                      {
+                             padding:20px;
+                          background-color:#abcc99;
+                          }
+                          .fcolo
+                          {
+                              color:Black ;
+                              
+                              
+                              }
+                              .marketting 
+                              {
+                                  margin-top:20px;
+                                  background-color:#e9e6df;
+                                  
+                                  
+                                  }
+                                  hr
+                                  {
+                                      border-top:1px solid #c9c9c9;
+                                      }
+                                      .bton
+                                      {
+                                          background-color:Red ;
+                                          }
+                                        .info
+                                        {   
+                                            background:#ffa753 url(../images/skyline.png) repeat-x bottom;
+                                            padding:80px 0;
+                                            
+                                            
+                                            }
+                                            .info small
+                                            {
+                                                color:Maroon ;
+                                                }
+                                                .thya 
+                                                {
+                                                    padding :200px;
+                                                    
+                                                    
+                                                    }
+                          
+                          .foter
+                          {
+                              background: url(../images/shattered.png)repeat;
+                              
+                              padding:80px 0px 60px 0px;
+                              
+                              }
+                          .sidebar
+                          {
+                              background-color:#e9e6df;
+                              
+                              
+                              
+                              }
+                              .blog h1 a{color:#4b8575;}
+                              .blog p a{color:#ed7337;}

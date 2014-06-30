@@ -1,0 +1,60 @@
+﻿table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.ActionLabel
+{
+    cursor: pointer;
+}
+.tblFrmSave
+{
+    border:none;
+    width:100%;
+    
+}
+.Buttonwrapper {
+    text-align:right;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.gridStyle
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#666666;
+	margin:0px;
+	padding:0px;
+}
+.gridHeaderStyle
+{
+	background-color:#E0E0E0;
+	color:Black;
+	
+}
+.gridAlternatingColor
+{
+	background-color:#EEF4F9;
+}
+.Error
+{
+	font-family:Verdana,Arial Black;
+	font-size:11px;
+	font-weight:bold;
+	color:Red;
+}
+.emptyList 
+{
+    color:red;
+    text-align:center;
+    font:bold;
+    border:solid;
+    border-color:red;
+}
+.Message
+{
+	font-family:Verdana,Arial Black;
+	font-size:11px;
+	font-weight:bold;
+	color:Green;	
+}
