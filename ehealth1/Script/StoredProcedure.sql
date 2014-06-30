@@ -1,5 +1,4 @@
 ﻿
-GO
 /****** Object:  StoredProcedure [dbo].[usp_AddRegFormData]    Script Date: 6/19/2014 10:40:04 AM ******/
 SET ANSI_NULLS ON
 GO

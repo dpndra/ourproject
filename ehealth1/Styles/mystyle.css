@@ -1,12 +1,7 @@
-﻿
-
-
-.my-header
+﻿.my-header
 {
     background-color:#0a6699;
     padding:15px;
-    width:100%;
-    
     
     
     }
@@ -74,40 +69,4 @@ input.form-fixer {
 .form-horizontal .form-group label { 
     height: 14px;
     line-height: 14px;
-}
-
-
-
-/*****************************************************learn jpt*****************************************************************************/
-  .trythis
- {
-     float:left;
-    
-    
-     border:1px solid #ddd;
-     list-style:none;
-     display:inline;
-     
-     
-     
-     }          
-           
-           
-           
-           .trythis
-          {
-             
-              float:left ;
-             
-             
-             -moz-transform-origin:bottom left;
-             -moz-transition:-moz-transform 0.2s ease-in-out;
-              
-              
-              }
-              .trythis:hover
-              {
-             -moz-transform: scale(0.75) translate(20px,40px);
-               -moz-box-shadow:10px 14px 10px rgba(0,0,0,0,1.5)   ;
-                  
-                  }
+}s

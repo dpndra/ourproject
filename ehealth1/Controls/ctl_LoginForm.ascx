@@ -1,16 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ctl_LoginForm.ascx.cs" Inherits="Controls_ctl_LoginForm" %>
 <div>
-<form class="login-form" role="form"action="#">
-<h2>Login</h2>
+<!--<form class= "register-form" role = "form"> -->
+<h2 class="form-signin-heading">Login</h2><hr />
 
+   
     EmailAddress:
-    <input  class="form-control"type="email" id="txtlgnUserEmailAddress" required oninvalid="this.setCustomValidity('enter the valid email')" />
+    <input class="form-control" type="text" id="txtlgnUserEmailAddress" />
     <br />
     Password:
-    <input type="password" id="txtlgnUserPassword" />
+    <input class="form-control" type="password" id="txtlgnUserPassword" />
     <br />
    
   
-    <input type="submit" id="btnLogin" value="Login" />
-    </form>
+    <input  class="btn btn-lg btn-primary" type= "submit" id="btnLogin" value=" Login" />
+<!--</form>-->
 </div>
+

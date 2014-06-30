@@ -107,7 +107,7 @@ public class EhealthWebMethod : System.Web.Services.WebService
             DataFormInfo objloginList = objLoginController.LoginVerification(UserEmailAddress, encryptPasswd.ToString());
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             data = serializer.Serialize(objloginList);
-
+         
             return data;
         }
         catch(Exception ex)
@@ -116,6 +116,21 @@ public class EhealthWebMethod : System.Web.Services.WebService
         }
 
     }
+    [WebMethod(EnableSession = true)]
+    public string StoreSessionValue(string SessionID, string SessionEmailAddress)
+    {
+        this.Session["ID"] = SessionID.ToString();
+        Session["EmailAddress"] = SessionEmailAddress.ToString();
+        string value = this.Session["ID"].ToString();
+        return "sessio aayo";
+    }
 
+    [WebMethod(EnableSession = true)]
+    public string RemoveSessionValue()
+    {
+       Session.Remove("ID");
+
+        return "Logged Out Successfully";
+    }
 
 }

@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Controls_ctl_LoginForm : System.Web.UI.UserControl
+public partial class Controls_ctl_UserProfile : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
 }

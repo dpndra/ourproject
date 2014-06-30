@@ -1997,10 +1997,3 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   })
 
 }(window.jQuery);
-$('body').popover({
-    selector: 'a[data-toggle=popover]',
-    container: 'body'
-}).tooltip({
-    selector: "a[data-toggle=tooltip]",
-    container: 'body'
-});

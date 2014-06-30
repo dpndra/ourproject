@@ -1,6 +1,6 @@
 ﻿/* for registration process  and for validation*/
 $(document).ready(function () {
-    alert("jquery");
+   
     var UserType;
     var UserEmailAddress;
     var UserPassword;
@@ -13,16 +13,19 @@ $(document).ready(function () {
     });
 
     $('#Register').click(function () {
+       
         if (UserType != $('input:radio[name=choose]:checked').val()) {
             UserType = $('#CategorySelect').val();
         }
+        else {
+
+        }
         UserEmailAddress = $('#txtUserEmailAddress').val();
         UserPassword = $('#txtUserPassword').val();
-       
+        
+        if (UserEmailAddress!= null && UserPassword!= null && UserType!= null) {
+            $.ajax({
 
-
-        $.ajax({
-            
                 type: "POST",
                 data: "{'userEmailAddress':'" + UserEmailAddress + "','userPassword':'" + UserPassword + "','userType':'" + UserType + "'}",
                 contentType: "application/json; charset=utf-8",
@@ -33,6 +36,10 @@ $(document).ready(function () {
 
                 }
             });
+        }
+       else {
+           
+        }
     });
 
 })
@@ -46,9 +53,11 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('#btnLogin').click(function () {
-        alert("login jquery chiryo");
+
         var LgnEmailAddress = $('#txtlgnUserEmailAddress').val();
         var LgnPassword = $('#txtlgnUserPassword').val();
+       
+        alert(LgnEmailAddress + LgnPassword);
         $.ajax
         ({
             type: "POST",
@@ -56,12 +65,96 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: "EhealthWebMethod.asmx/LoginVerification",
-            success: function (response) {
-                var msg = eval('(' + response.d + ')');
-                $("#txtSessionID").val(msg.UserID);
-
+            async: "true",
+            success: function (response)
+            {
+                msg = eval('(' + response.d + ')');
                
+               
+                $('#lblUserEmailAddress').text(msg.UserEmailAddress);
+                sessionStorage.setItem("emailAddress",msg.UserEmailAddress);
+                $('#txtSessionID').val(msg.UserID);
+                if (msg.UserID != '0')
+                {
+                    sessionStorage.setItem("id", msg.UserID);
+
+                    // var AfterLogin = "<p>" + "Welcome" + msg.UserEmailAddress + "</p>";
+                    // var table = "<p>" + "Successfully Logged In" + "</p>"
+
+                    //   $('#errorMsg').html(AfterLogin);
+                   
+                    $.ajax
+                     ({
+
+                       type: "POST",
+                       data: "{'SessionID':'" + sessionStorage.getItem("id") + "','SessionEmailAddress':'" + sessionStorage.getItem("emailAddress") + "'}",
+                       contentType: "application/json; charset=utf-8",
+                       dataType: "json",
+                       url: "EhealthWebMethod.asmx/StoreSessionValue",
+                       async: "true",
+                       success: function (response) {
+                           alert("Logged In Successfully with" + response.d);
+                           $('#registerLogin').hide();
+                           $('#welcomeLogin').css("display", "block");
+                       }
+
+                   });
+
+                }
+                else {
+
+                    //  var table = "<p>" + "Username and Password Didn't matcha" + "</p>"
+                    // $('#loginbhaye').html(table);
+                    alert("bhayena");
+                    $('#registerLogin').css("display", "block");
+                    $('#welcomeLogin').hide();
+
+                }
+
+
+            }
+
+
+
+
+        });
+     //   if (sessionStorage.getItem('id')!=null) {
+           
+      //  }
+    });
+
+
+
+})
+
+$(document).ready(function () {
+    if(sessionStorage.getItem('emailAddress')!=null)
+    {
+       
+        $('#lblUserEmailAddress').text(sessionStorage['emailAddress']);
+       
+    }
+})
+
+$(document).ready(function () {
+    $('#btnlogout').click(function () {
+        sessionStorage.clear();
+        $('#registerLogin').css("display", "block");
+        $('#welcomeLogin').hide();
+        $.ajax
+        ({
+
+            type: "POST",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            url: "EhealthWebMethod.asmx/RemoveSessionValue",
+            async: "true",
+            success: function (response) {
+                alert(response.d);
+
             }
         });
+
     });
 })
